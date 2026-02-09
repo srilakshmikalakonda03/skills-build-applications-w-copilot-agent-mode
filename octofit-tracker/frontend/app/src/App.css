@@ -83,8 +83,3 @@ a, .App-link {
 a:hover, .App-link:hover {
   color: #ffd700;
 }
-
-/* Favicon for browser tab */
-link[rel="icon"] {
-  content: url('/favicon.svg');
-}
