@@ -24,7 +24,7 @@
       "cwd": "${workspaceFolder}/octofit-tracker/frontend",
       "runtimeExecutable": "npm",
       "runtimeArgs": ["start"],
-      "port": 3002,
+      "port": 8002,
       "env": {
         "REACT_APP_CODESPACE_NAME": "${env:CODESPACE_NAME}"
       }
