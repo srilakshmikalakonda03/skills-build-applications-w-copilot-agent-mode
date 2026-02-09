@@ -41,7 +41,15 @@ def api_root_with_codespace(request):
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', api_root_with_codespace, name='api-root'),
-    path('api/', include(router.urls)),
+    path('api/activities/', ActivityViewSet.as_view({'get': 'list', 'post': 'create'}), name='activity-list'),
+    path('api/activities/<int:pk>/', ActivityViewSet.as_view({'get': 'retrieve', 'put': 'update', 'patch': 'partial_update', 'delete': 'destroy'}), name='activity-detail'),
+    path('api/teams/', TeamViewSet.as_view({'get': 'list', 'post': 'create'}), name='team-list'),
+    path('api/teams/<int:pk>/', TeamViewSet.as_view({'get': 'retrieve', 'put': 'update', 'patch': 'partial_update', 'delete': 'destroy'}), name='team-detail'),
+    path('api/users/', UserViewSet.as_view({'get': 'list', 'post': 'create'}), name='user-list'),
+    path('api/users/<int:pk>/', UserViewSet.as_view({'get': 'retrieve', 'put': 'update', 'patch': 'partial_update', 'delete': 'destroy'}), name='user-detail'),
+    path('api/workouts/', WorkoutViewSet.as_view({'get': 'list', 'post': 'create'}), name='workout-list'),
+    path('api/workouts/<int:pk>/', WorkoutViewSet.as_view({'get': 'retrieve', 'put': 'update', 'patch': 'partial_update', 'delete': 'destroy'}), name='workout-detail'),
+    path('api/leaderboard/', LeaderboardViewSet.as_view({'get': 'list'}), name='leaderboard-list'),
 ]
 """octofit_tracker URL Configuration
 
